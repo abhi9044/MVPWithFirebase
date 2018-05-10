@@ -1,4 +1,4 @@
-package com.example.apoorv.conferenceattendancetracker.Utils;
+package com.example.apoorv.conferenceattendancetracker.utils;
 
 
 /**

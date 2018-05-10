@@ -2,19 +2,22 @@ package com.example.apoorv.conferenceattendancetracker.ui.attendeeList;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.Toast;
-
-import com.example.apoorv.conferenceattendancetracker.QRCheckinActivity;
 import com.example.apoorv.conferenceattendancetracker.R;
 import com.example.apoorv.conferenceattendancetracker.data.model.Attendee;
+import com.example.apoorv.conferenceattendancetracker.ui.qrscanner.QRCheckinActivity;
+import com.example.apoorv.conferenceattendancetracker.utils.mvp.BaseView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,9 +30,9 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.example.apoorv.conferenceattendancetracker.Utils.Properties.ATTENDEE_DATABASE;
+import static com.example.apoorv.conferenceattendancetracker.utils.Properties.ATTENDEE_DATABASE;
 
-public class MainActivity extends AppCompatActivity {
+public class AttendeeDisplayFragment extends BaseView {
 
     /*
     Variables  attendeeDisplayRecyclerView-- responsible for displaying the list
@@ -50,14 +53,27 @@ public class MainActivity extends AppCompatActivity {
     private DatabaseReference mDatabaseReference;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+//        photos = new ArrayList<>();
+//        ThreadExecutor threadExecutor = ThreadExecutor.getInstance();
+//        MainUiThread mainUiThread = MainUiThread.getInstance();
+//        DatabaseDefinition databaseDefinition = FlowManager.getDatabase(LocalDatabase.class);
+//        DataRepository dataRepository = Injection.provideDataRepository(mainUiThread,
+//                threadExecutor, databaseDefinition);
+//        presenter = new PhotosPresenter(this, dataRepository, threadExecutor, mainUiThread);
+        setRetainInstance(true);
+    }
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_attendee_display, container, false);
+        ButterKnife.bind(this,view);
         getFirebaseInstance();
         setUi();
         UpdateMyAttendeeList();
+        return view;
     }
-
     /*On any crud operation performed it updates the list by listening to
      *@function onDatachange -- calls @function setMyAttendanceObject
      *@function onCancelled -- Displays the error message if api cancelled
@@ -78,7 +94,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(getApplicationContext(), getResources().getString(R.string.server_error_message), Toast.LENGTH_SHORT).show();
+                Toast.makeText(getActivity().getApplicationContext(), getResources().getString(R.string.server_error_message), Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -104,10 +120,9 @@ public class MainActivity extends AppCompatActivity {
     //Binding the views and initialising layout manager ,recycler view and display adapter for the list
     private void setUi() {
         attendeeList = new ArrayList<>();
-        ButterKnife.bind(this);
-        layoutManager = new LinearLayoutManager(MainActivity.this);
+        layoutManager = new LinearLayoutManager(getContext());
         attendeeDisplayRecyclerView.setLayoutManager(layoutManager);
-        attendeeDisplayAdapter = new AttendeeDisplayAdapter(attendeeList, MainActivity.this);
+        attendeeDisplayAdapter = new AttendeeDisplayAdapter(attendeeList, getContext());
         showProgressBar();
     }
 
@@ -128,33 +143,4 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseDatabase.getReference().keepSynced(true);
     }
 
-    /*
-    @param menu -- menu created is inflated using menu inflater
-     contains options -- Refresh
-                      -- Check In
-     */
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater menuInflater = getMenuInflater();
-        menuInflater.inflate(R.menu.menu, menu);
-        return true;
-    }
-
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            //if menu option Check In is selected
-            case R.id.checkin:
-                startActivity(new Intent(MainActivity.this, QRCheckinActivity.class));
-                break;
-            // if menu Refresh is selected
-            case R.id.refresh:
-                mFirebaseDatabase.getReference().keepSynced(true);
-                Toast.makeText(getApplicationContext(),getResources().getString(R.string.refresh),Toast.LENGTH_SHORT).show();
-                break;
-        }
-        return super.onOptionsItemSelected(item);
-
-    }
 }

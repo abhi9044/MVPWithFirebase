@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import com.example.apoorv.conferenceattendancetracker.R;
 import com.example.apoorv.conferenceattendancetracker.data.model.Attendee;
-import com.example.apoorv.conferenceattendancetracker.ui.attendeeList.MainActivity;
+import com.example.apoorv.conferenceattendancetracker.ui.attendeeList.AttendeeDisplayFragment;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -16,8 +16,8 @@ import com.google.zxing.integration.android.IntentResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.example.apoorv.conferenceattendancetracker.Utils.Properties.ATTENDEE_DATABASE;
-import static com.example.apoorv.conferenceattendancetracker.Utils.Properties.BASEURL;
+import static com.example.apoorv.conferenceattendancetracker.utils.Properties.ATTENDEE_DATABASE;
+import static com.example.apoorv.conferenceattendancetracker.utils.Properties.BASEURL;
 
 public class QRCheckinActivity extends AppCompatActivity {
 
@@ -66,7 +66,7 @@ public class QRCheckinActivity extends AppCompatActivity {
         if (result != null) {
             if (result.getContents() == null) {
                 Toast.makeText(this, getResources().getString(R.string.result_not_found), Toast.LENGTH_LONG).show();
-                startActivity(new Intent(QRCheckinActivity.this, MainActivity.class));
+                startActivity(new Intent(QRCheckinActivity.this, AttendeeDisplayFragment.class));
             } else {
                 makeMyUpdatedObject(result);
             }
@@ -92,7 +92,7 @@ public class QRCheckinActivity extends AppCompatActivity {
     private void doErrorHandling(JSONException e) {
         e.printStackTrace();
         Toast.makeText(this, getResources().getString(R.string.scan_error), Toast.LENGTH_LONG).show();
-        startActivity(new Intent(QRCheckinActivity.this, MainActivity.class));
+        startActivity(new Intent(QRCheckinActivity.this, AttendeeDisplayFragment.class));
     }
 
     /* Function is called to perform update operation on the checkedIn value of the given object and update the list
@@ -104,6 +104,6 @@ public class QRCheckinActivity extends AppCompatActivity {
         mDatabaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl(BASEURL + ATTENDEE_DATABASE + "/" + updatedId);
         mDatabaseReference.setValue(updatedData);
         Toast.makeText(this, updatedData.getName() + " Checked In!!", Toast.LENGTH_LONG).show();
-        startActivity(new Intent(QRCheckinActivity.this, MainActivity.class));
+        startActivity(new Intent(QRCheckinActivity.this, AttendeeDisplayFragment.class));
     }
 }
