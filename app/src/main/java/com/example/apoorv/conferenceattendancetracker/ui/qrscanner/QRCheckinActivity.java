@@ -1,4 +1,4 @@
-package com.example.apoorv.conferenceattendancetracker.Activity;
+package com.example.apoorv.conferenceattendancetracker.ui.qrscanner;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -6,7 +6,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.example.apoorv.conferenceattendancetracker.R;
-import com.example.apoorv.conferenceattendancetracker.model.Attendee;
+import com.example.apoorv.conferenceattendancetracker.data.model.Attendee;
+import com.example.apoorv.conferenceattendancetracker.ui.attendeeList.MainActivity;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.zxing.integration.android.IntentIntegrator;
@@ -15,8 +16,8 @@ import com.google.zxing.integration.android.IntentResult;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import static com.example.apoorv.conferenceattendancetracker.Utils.ApplicationUtils.ATTENDEE_DATABASE;
-import static com.example.apoorv.conferenceattendancetracker.Utils.ApplicationUtils.BASEURL;
+import static com.example.apoorv.conferenceattendancetracker.Utils.Properties.ATTENDEE_DATABASE;
+import static com.example.apoorv.conferenceattendancetracker.Utils.Properties.BASEURL;
 
 public class QRCheckinActivity extends AppCompatActivity {
 

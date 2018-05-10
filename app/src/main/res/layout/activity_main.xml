@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/background"
-    tools:context="com.example.apoorv.conferenceattendancetracker.Activity.MainActivity">
+    tools:context=".ui.Activity.MainActivity">
 
     <ProgressBar
         android:id="@+id/progressBar"

@@ -6,7 +6,7 @@ package com.example.apoorv.conferenceattendancetracker.Utils;
  * used throughout the project
  */
 
-public class ApplicationUtils {
+public class Properties {
     /* BASEURL -- base api of the firebase databse being referenced
        ATTENDEE_DATABASE -- end point table name to be updated
      */

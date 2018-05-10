@@ -1,4 +1,4 @@
-package com.example.apoorv.conferenceattendancetracker.model;
+package com.example.apoorv.conferenceattendancetracker.data.model;
 
 /**
  * Model Class of Attendee

@@ -1,4 +1,4 @@
-package com.example.apoorv.conferenceattendancetracker.adapter;
+package com.example.apoorv.conferenceattendancetracker.ui.attendeeList;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.example.apoorv.conferenceattendancetracker.R;
-import com.example.apoorv.conferenceattendancetracker.model.Attendee;
+import com.example.apoorv.conferenceattendancetracker.data.model.Attendee;
 
 import java.util.ArrayList;
 import java.util.List;

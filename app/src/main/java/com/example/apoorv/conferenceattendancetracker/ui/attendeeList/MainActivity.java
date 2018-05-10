@@ -1,4 +1,4 @@
-package com.example.apoorv.conferenceattendancetracker.Activity;
+package com.example.apoorv.conferenceattendancetracker.ui.attendeeList;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,9 +12,9 @@ import android.view.View;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import com.example.apoorv.conferenceattendancetracker.QRCheckinActivity;
 import com.example.apoorv.conferenceattendancetracker.R;
-import com.example.apoorv.conferenceattendancetracker.adapter.AttendeeDisplayAdapter;
-import com.example.apoorv.conferenceattendancetracker.model.Attendee;
+import com.example.apoorv.conferenceattendancetracker.data.model.Attendee;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -27,7 +27,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
-import static com.example.apoorv.conferenceattendancetracker.Utils.ApplicationUtils.ATTENDEE_DATABASE;
+import static com.example.apoorv.conferenceattendancetracker.Utils.Properties.ATTENDEE_DATABASE;
 
 public class MainActivity extends AppCompatActivity {
 

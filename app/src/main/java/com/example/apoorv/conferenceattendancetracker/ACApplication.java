@@ -6,7 +6,7 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-import static com.example.apoorv.conferenceattendancetracker.Utils.ApplicationUtils.ATTENDEE_DATABASE;
+import static com.example.apoorv.conferenceattendancetracker.Utils.Properties.ATTENDEE_DATABASE;
 
 public class ACApplication extends Application {
 
