@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Conference Attendance Tracker</string>
+    <string name="conference_room_attendee_display">Conference Attendee List</string>
+    <string name="company">Company</string>
+    <string name="name">name</string>
+    <string name="companyname">company</string>
+    <string name="server_error_message">Could Not Connect To The Server ! PLEASE Try Again!!</string>
+    <string name="result_not_found">Result Not Found!!</string>
+    <string name="scan_error">COuld Not Scan The Provided QR Code! Please Try Again Later</string>
+    <string name="refresh">Data Refreshed!!</string>
+
+</resources>

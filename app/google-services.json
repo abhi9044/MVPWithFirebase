@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "22970998526",
+    "firebase_url": "https://conferenceattendancetracker.firebaseio.com",
+    "project_id": "conferenceattendancetracker",
+    "storage_bucket": "conferenceattendancetracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:22970998526:android:6f930868a795e22b",
+        "android_client_info": {
+          "package_name": "com.example.apoorv.conferenceattendancetracker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "22970998526-tnfa1siukd34fqe8gs8u3ehtm57mn22n.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.apoorv.conferenceattendancetracker",
+            "certificate_hash": "3aabf935551abec58e231a7cd86339dfe3350a28"
+          }
+        },
+        {
+          "client_id": "22970998526-68id92hrhbmt4ccs7u450i6ea5479p3e.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDs45y7vek-ESjb0a33QWtEHYLYE-zIPCM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "22970998526-68id92hrhbmt4ccs7u450i6ea5479p3e.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
