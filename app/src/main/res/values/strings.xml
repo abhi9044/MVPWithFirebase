@@ -9,5 +9,6 @@
     <string name="scan_error">COuld Not Scan The Provided QR Code! Please Try Again Later</string>
     <string name="refresh">Data Refreshed!!</string>
     <string name="offline_msg">You are offline now</string>
+    <string name="no_list_available">No List Available</string>
 
 </resources>

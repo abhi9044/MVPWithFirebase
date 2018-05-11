@@ -1,0 +1,11 @@
+<resources>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="title_margin_bottom">8dp</dimen>
+    <dimen name="title_paddingBottomTop">8dp</dimen>
+    <dimen name="title_paddingLeft">16dp</dimen>
+    <dimen name="title_paddingRight">8dp</dimen>
+    <dimen name="title_marginLeftRight">8dp</dimen>
+    <dimen name="item_photo_margin">4dp</dimen>
+    <dimen name="title_textSize">24sp</dimen>
+    <dimen name="comments_marginTop">20dp</dimen>
+</resources>

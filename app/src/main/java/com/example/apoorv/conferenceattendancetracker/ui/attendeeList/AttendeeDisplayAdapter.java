@@ -72,4 +72,15 @@ public class AttendeeDisplayAdapter extends RecyclerView.Adapter<AttendeeDisplay
         }
 
     }
+    public void clear() {
+        int size = getItemCount();
+        attendeeArrayList.clear();
+        notifyItemRangeRemoved(0, size);
+    }
+
+    public void addAll(List<Attendee> attendeeList) {
+        int prevSize = getItemCount();
+        this.attendeeArrayList.addAll(attendeeList);
+        notifyItemRangeInserted(prevSize, attendeeList.size());
+    }
 }
