@@ -16,7 +16,7 @@ import java.util.List;
 //Adapter class
 public class AttendeeDisplayAdapter extends RecyclerView.Adapter<AttendeeDisplayAdapter.AttendeeViewHolder> {
 
-    private List<Attendee> attendeeArrayList = new ArrayList<>();
+    private List<Attendee> attendeeArrayList = new ArrayList<Attendee>();
     private Context context;
     private Attendee attendeeObj;
 
@@ -28,7 +28,7 @@ public class AttendeeDisplayAdapter extends RecyclerView.Adapter<AttendeeDisplay
     @Override
     public AttendeeDisplayAdapter.AttendeeViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.attendee_single_list_item, parent, false);
-        AttendeeViewHolder attendeeViewHolder = new AttendeeViewHolder(view, context, attendeeArrayList);
+        AttendeeViewHolder attendeeViewHolder = new AttendeeViewHolder(view);
         return attendeeViewHolder;
     }
 
@@ -60,13 +60,11 @@ public class AttendeeDisplayAdapter extends RecyclerView.Adapter<AttendeeDisplay
 
         TextView tvAttendeeName;
         TextView tvAttendeeCompanyAndProfile;
-        List<Attendee> attendeeList;
         Context context;
 
-        public AttendeeViewHolder(View itemView, Context context, List<Attendee> attendeeList) {
+        public AttendeeViewHolder(View itemView) {
             super(itemView);
             tvAttendeeName = itemView.findViewById(R.id.attendee_name);
-            this.attendeeList = attendeeList;
             this.context = context;
             tvAttendeeCompanyAndProfile = itemView.findViewById(R.id.attendee_company_and_type);
         }

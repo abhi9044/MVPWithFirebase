@@ -73,6 +73,7 @@ public class AttendeeDisplayFragment extends BaseView implements AttendeeContrac
         layoutManager = new LinearLayoutManager(getContext());
         attendeeDisplayRecyclerView.setLayoutManager(layoutManager);
         attendeeDisplayAdapter = new AttendeeDisplayAdapter(attendeeList, getContext());
+        attendeeDisplayRecyclerView.setAdapter(attendeeDisplayAdapter);
         getAttendeeList();
     }
 

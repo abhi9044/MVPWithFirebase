@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 apply plugin: 'com.google.gms.google-services'
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.apoorv.conferenceattendancetracker"
-        minSdkVersion 15
-        targetSdkVersion 26
+        minSdkVersion 24
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         multiDexEnabled  true
@@ -20,14 +20,13 @@ android {
 }
 
 ext{
-    supportLibVersion = "26.1.0"
+    supportLibVersion = "27.0.0"
     butterKnifeVersion = "8.8.1"
     firebaseVersion = "11.4.2"
     junitVersion = "4.12"
     mockitoVersion = "2.7.19"
     espressoCoreVersion = "2.2.2"
 }
-
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -51,8 +50,4 @@ dependencies {
     implementation "android.arch.lifecycle:extensions:1.1.1"
     implementation 'com.android.support.constraint:constraint-layout:1.1.0'
     testImplementation 'junit:junit:4.12'
-    compile 'com.android.support:multidex:1.0.0'
-
-
-
 }

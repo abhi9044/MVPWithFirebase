@@ -1,7 +1,6 @@
 package com.example.apoorv.conferenceattendancetracker.ui.attendeeList;
 
 import android.content.Context;
-import android.widget.Toast;
 
 import com.example.apoorv.conferenceattendancetracker.R;
 import com.example.apoorv.conferenceattendancetracker.data.model.Attendee;
